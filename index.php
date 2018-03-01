@@ -40,7 +40,8 @@ if (!is_admin() && !is_home()) {
              array(
                  'category__in'   => $postcat[0]->term_id,
                  'posts_per_page' => $atts['posts'],
-                 'post__not_in'   => array( $post->ID )
+                 'post__not_in'   => array( $post->ID ),
+                 'orderby'        => 'rand',
              )
          );
          if( $related->have_posts() ) { 
